@@ -1,0 +1,37 @@
+使用笔记
+================
+
+从官网下的压缩包：libsvm-3.2.tar.gz
+解压
+查看README可以了解安装和使用
+
+安装: make  (for unix)
+
+数据格式:
+<label> <index1>:<value1> <index2>:<value2> ...
+训练和测试数据都是这样的格式
+label是类标(整数)或者是回归值(实数),单类的由于不用可随便设置一个值
+index1是特征索引,从1开始（提前计算的核函数从0开始），升序排列，value1是特征值（实数）
+脚本tools/checkdata.py可检测数据集的好坏
+数据示例：heart_scale
+
+使用：
+svn-scale 将数据标准化
+Usage: svm-scale [options] data_filename
+
+svm-train 训练模型
+Usage: svm-train [options] training_set_file [model_file]
+
+svm-predict 使用训练的模型在测试数据上预测
+Usage: svm-predict [options] test_file model_file output_file
+
+实用技巧
+1. 使用svm-scale将特征值标准化到区间[0, 1] 或者 [-1,1]
+2. 对于C-SVC，考虑使用tools目录下的模型选择工具 
+3. nu近似表示训练误差和支持向量的部分(??)
+4. 如果训练数据不平衡，通过-vi试试不同的惩罚参数C
+5. 对于更大规模的问题，指定更大的缓存(-m)
+
+包的使用中有函数详细说明，可开发自己的程序。
+
+更看查看README和源代码。
