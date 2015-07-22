@@ -1,0 +1,17 @@
+
+cmds:
+git clone https://github.com/lostfish/lostfish.github.io.git
+cd lostfish.github.io/
+vim .gitignore
+git add .gitignore 
+git commit -m"add myblog folder to ignore list"
+cd myblog/
+make publish 
+make serve 
+git branch gh-pages
+ghp-import output/
+git checkout master
+git merge gh-pages
+git push --all
+make github 
+

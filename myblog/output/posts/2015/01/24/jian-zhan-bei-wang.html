@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="lostfish" />
+        <meta name="copyright" content="lostfish" />
+
+        <meta name="description" content="一直想着搭建一个自己的网站，这次终于付诸行动了。参考了网上的许多资料，所以在这里就简单记录下自己的建站过程。 购买域名 从godaddy购买域名。也可用选择从万网和新网购买域名，这些网站还提供一条龙的服务，如提供主机，帮助备案等。 选择托管网站的主机 购买虚拟主机或者VPS，也可选择存储在github上，我选择的后者（以后有时间再买个主机试试）。如果要将网页放在github上，需要申请一个github账号，并创建一个与帐号同名的项目。具体参考 GitHub Pages。 生成网页 Github推荐使用Jekyll构建自己的github pages。由于偏好python，我选择的pelican（鹈鹕）。Pelican是一个python包，使用pelican生成博客框架的过程如下： sudo apt-get install python-pip pip install pelican pip install markdown mkdir myblog cd myblog pelican-quickstart 在myblog/content目录下编写markdown文件：test.md,然后在myblog目录下执行如下命令 ...
+" />
+<meta name="keywords" content="web, github, pelican, Tech, " />
+        <title>建站备忘 - 当你老了
+</title>
+        <link href="/theme/css/slim-081711.css" rel="stylesheet" type="text/css">
+        <link href="/theme/css/bootstrap-combined.min.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="/theme/css/style.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="/theme/css/solarizedlight.css" media="screen">
+        <link rel="shortcut icon" href="/theme/images/favicon.ico" type="image/x-icon" />
+        <link rel="apple-touch-icon" href="/theme/images/apple-touch-icon.png" />
+        <link rel="apple-touch-icon" sizes="57x57" href="/theme/images/apple-touch-icon-57x57.png" />
+        <link rel="apple-touch-icon" sizes="72x72" href="/theme/images/apple-touch-icon-72x72.png" />
+        <link rel="apple-touch-icon" sizes="114x114" href="/theme/images/apple-touch-icon-114x114.png" />
+        <link rel="apple-touch-icon" sizes="144x144" href="/theme/images/apple-touch-icon-144x144.png" />
+        <link rel="icon" href="/theme/images/apple-touch-icon-144x144.png" />
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-58905600-1']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+    </script>
+    </head>
+    <body>
+        <div id="content-sans-footer">
+        <div class="navbar navbar-static-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </a>
+                    <a class="brand" href="/"><span class=site-name>当你老了</span></a>
+                    <div class="nav-collapse collapse">
+                        <ul class="nav pull-right top-menu">
+                            <li ><a href="">Home</a></li>
+                            <li ><a href="/categories.html">Categories</a></li>
+                            <li ><a href="/tags.html">Tags</a></li>
+                            <li ><a href="/archives.html">Archives</a></li>
+                            <li><form class="navbar-search" action="/search.html" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="span1"></div>
+                <div class="span10">
+<article>
+<div class="row-fluid">
+    <header class="page_header span10 offset2">
+    <h1><a href="/posts/2015/01/24/jian-zhan-bei-wang.html"> 建站备忘  </a></h1>
+    </header>
+</div>
+
+<div class="row-fluid">
+        <div class="span8 offset2 article-content">
+
+            <p>一直想着搭建一个自己的网站，这次终于付诸行动了。参考了网上的许多资料，所以在这里就简单记录下自己的建站过程。</p>
+<h3 id="_1">购买域名</h3>
+<p>从godaddy购买域名。也可用选择从万网和新网购买域名，这些网站还提供一条龙的服务，如提供主机，帮助备案等。</p>
+<h3 id="_2">选择托管网站的主机</h3>
+<p>购买虚拟主机或者<span class="caps">VPS</span>，也可选择存储在github上，我选择的后者（以后有时间再买个主机试试）。如果要将网页放在github上，需要申请一个github账号，并创建一个与帐号同名的项目。具体参考 <a href="https://help.github.com/categories/github-pages-basics/">GitHub Pages</a>。 </p>
+<h3 id="_3">生成网页</h3>
+<p>Github推荐使用Jekyll构建自己的github&nbsp;pages。由于偏好python，我选择的pelican（鹈鹕）。Pelican是一个python包，使用pelican生成博客框架的过程如下：</p>
+<div class="highlight"><pre>sudo apt-get install python-pip
+pip install pelican
+pip install markdown
+mkdir myblog
+cd myblog
+pelican-quickstart
+</pre></div>
+
+
+<p>在myblog/content目录下编写markdown文件：test.md,然后在myblog目录下执行如下命令：</p>
+<div class="highlight"><pre>make html
+make serve
+</pre></div>
+
+
+<p>在myblog/output目录下会生成页面，同时在浏览器输入<em>localhost:8000</em>可以查看结果。</p>
+<p>Markdown语法可参考 <a href="https://help.github.com/articles/markdown-basics/">Markdown Basics</a>，Ubuntu-14.04下貌似默认安装了编辑器retext。</p>
+<p>此外，需要加入如下几个功能：</p>
+<ol>
+<li>
+<p>选择博客主题。下载pelican主题项目进行配置。</p>
+<div class="highlight"><pre>git clone --recursive https://github.com/getpelican/pelican-themes.git
+cd pelican-themes
+pelican-themes -i ./pelican-themes/elegent
+</pre></div>
+
+
+</li>
+<li>
+<p>增加sitemap。下载pelican插件项目进行配置。</p>
+<div class="highlight"><pre>git clone https://github.com/getpelican/pelican-plugins
+cd pelican-plguins
+</pre></div>
+
+
+</li>
+<li>
+<p>增加评论。<a href="https://disqus.com/">disqus</a>提供了评论功能，注册账号即可获取一个shortname，将shortname加入pelicanconf.py,生成的页面中就会加入评论功能。</p>
+</li>
+<li>
+<p>增加站长统计。可选择google或者百度的站长工具。如果选择gogole，在 <a href="http://www.google.com/analytics">Google Analytics</a> 创建帐号，将追踪<span class="caps">ID</span>加入pelicanconf.py，生成页面中就会加入追踪功能。在 <a href="http://www.google.com/webmasters">Google Webmasters</a>&nbsp;可查看追踪结果。</p>
+</li>
+</ol>
+<p>最后，配置文件myblog/pelicanconf.py基本如下：</p>
+<div class="highlight"><pre>AUTHOR = u&#39;lostfish&#39;
+SITENAME = u&quot;lostfish&quot;
+SITEURL = &#39;http://tangke.me&#39;
+THEME = &#39;elegent&#39;
+DISQUS_SITENAME = &#39;disqus提供的shortname&#39;
+GOOGLE_ANALYTICS = &#39;google提供的追踪id&#39;
+
+PATH = &#39;content&#39; #网页内容对应的markdown文件路径
+...
+# 设置生成页面存储路径为pots/年/月/日/{slug}.html (slug即文章标题拼音)
+USE_FOLDER_AS_CATEGORY = False
+ARTICLE_URL = &#39;posts/{date:%Y}/{date:%m}/{date:%d}/{slug}.html&#39;
+ARTICLE_SAVE_AS = &#39;posts/{date:%Y}/{date:%m}/{date:%d}/{slug}.html&#39;
+PAGE_URL = &#39;pages/{slug}.html&#39;
+PAGE_SAVE_AS = &#39;pages/{slug}.html&#39;
+YEAR_ARCHIVE_SAVE_AS = &#39;posts/{date:%Y}/index.html&#39;
+MONTH_ARCHIVE_SAVE_AS = &#39;posts/{date:%Y}/{date:%m}/index.html&#39;
+
+#站点地图插件配置
+PLUGIN_PATHS = [&quot;pelican-plugins&quot;]
+PLUGINS = [&#39;sitemap&#39;, &#39;extract_toc&#39;, &#39;tipue_search&#39;, &#39;liquid_tags.img&#39;,
+            &#39;neighbors&#39;, &#39;latex&#39;, &#39;related_posts&#39;, &#39;share_post&#39;]
+SITEMAP = {
+    &#39;format&#39;: &#39;xml&#39;,
+    &#39;priorities&#39;: {
+        &#39;articles&#39;: 0.7,
+        &#39;indexes&#39;: 0.5,
+        &#39;pages&#39;: 0.3,
+    },
+    &#39;changefreqs&#39;: {
+        &#39;articles&#39;: &#39;monthly&#39;,
+        &#39;indexes&#39;: &#39;daily&#39;,
+        &#39;pages&#39;: &#39;monthly&#39;
+    }
+}
+</pre></div>
+
+
+<h3 id="_4">绑定域名</h3>
+<p>将自己购买的域名与github&nbsp;page绑定在一起需要3步：</p>
+<ol>
+<li>在github pages项目下增加文件<span class="caps">CNAME</span>，在该文件中加入购买的域名。</li>
+<li>在godaddy中将购买域名对应的域名解析服务器绑定到dnspod的服务器，可参考: <a href="https://support.dnspod.cn/Kb/showarticle/?qtype=%E5%8A%9F%E8%83%BD%E4%BB%8B%E7%BB%8D%E5%8F%8A%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B&amp;tsid=42">Godaddy注册商域名修改<span class="caps">DNS</span>地址</a>。</li>
+<li>注册dnspod账户，将自己购买的域名与github的服务器绑定,建立两条A类记指向192.30.252.153和192.30.252.154（这个<span class="caps">IP</span>可能会变化，参考github上 <a href="https://help.github.com/articles/tips-for-configuring-an-a-record-with-your-dns-provider/">教程</a>）。另外，这个配置最晚可能要等72小时之后才生效。  </li>
+</ol>
+<h3 id="_5">有用参考</h3>
+<ul>
+<li><a href="http://docs.getpelican.com/en/3.5.0/settings.html">Pelican官方文档</a></li>
+<li><a href="http://www.pelicanthemes.com/">Pelican主题列表</a></li>
+<li><a href="http://oncrashreboot.com/elegant-best-pelican-theme-features">主题elegent配置说明</a></li>
+</ul>
+            <aside>
+            <nav>
+            <ul class="articles_timeline">
+ 
+                <li class="next_article"><a href="/posts/2015/05/10/sha-men-san-ri-you.html" title="Next: 厦门三日游">厦门三日游</a> »</li>
+            </ul>
+            </nav>
+            </aside>
+        </div>
+        <section>
+        <div class="span2" style="float:right;font-size:0.9em;">
+ 
+            <h4>Published</h4>
+            <time pubdate="pubdate" datetime="2015-01-24T00:00:00+08:00">Jan 24, 2015</time>
+            <h4>Category</h4>
+            <a class="category-link" href="/categories.html#Tech-ref">Tech</a> 
+            <h4>Tags</h4>
+            <ul class="list-of-tags tags-in-article"> 
+                <li><a href="/tags.html#github-ref">github
+                    <span>1</span>
+</a></li>
+                <li><a href="/tags.html#pelican-ref">pelican
+                    <span>1</span>
+</a></li>
+                <li><a href="/tags.html#web-ref">web
+                    <span>1</span>
+</a></li>
+            </ul>
+
+        </div>
+        </section>
+    </div>
+    </article>
+                </div>
+                <div class="span1"></div>
+            </div>
+        </div>
+    </div>
+<footer>
+<div id="footer">
+    <ul class="footer-content">
+        <li class="elegant-license"><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">当你老了</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://tangke.me" property="cc:attributionName" rel="cc:attributionURL">JimmyTang</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.</li>
+        <li class="elegant-power">Powered by <a href="http://getpelican.com/" title="Pelican Home Page">Pelican</a>. Theme: <a href="http://oncrashreboot.com/pelican-elegant" title="Theme Elegant Home Page">Elegant</a> by <a href="http://oncrashreboot.com" title="Talha Mansoor Home Page">Talha Mansoor</a></li>
+    </ul>
+</div>
+</footer>            <script src="http://code.jquery.com/jquery.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
+        <script>
+            function validateForm(query)
+            {
+                return (query.length > 0);
+            }
+        </script>
+
+    </body>
+</html>

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>当你老了</title><link href="http://tangke.me/" rel="alternate"></link><link href="http://tangke.me/feeds/tech.atom.xml" rel="self"></link><id>http://tangke.me/</id><updated>2015-07-04T00:00:00+08:00</updated><entry><title>dlib使用入门</title><link href="http://tangke.me/posts/2015/07/04/dlibshi-yong-ru-men.html" rel="alternate"></link><updated>2015-07-04T00:00:00+08:00</updated><author><name>lostfish</name></author><id>tag:tangke.me,2015-07-04:posts/2015/07/04/dlibshi-yong-ru-men.html</id><summary type="html">&lt;p&gt;dlib是一个比较知名的C++机器学习包，集成常用的算法，文档清晰，实例丰富，初步使用了一下，上手较快，编译也比较简单。&lt;/p&gt;
+&lt;h3 id="_1"&gt;安装&lt;/h3&gt;
+&lt;p&gt;首先从官网下载工具包，然后按照官网教程进行安装就可以了。&lt;/p&gt;
+&lt;h3 id="_2"&gt;聚类实验&lt;/h3&gt;
+&lt;p&gt;尝试使用dlib提供的kmeans算法进行了一次聚类实验。&amp;nbsp;&amp;#8230;&lt;/p&gt;</summary><category term="dlib"></category><category term="tools"></category><category term="c++"></category></entry><entry><title>建站备忘</title><link href="http://tangke.me/posts/2015/01/24/jian-zhan-bei-wang.html" rel="alternate"></link><updated>2015-01-24T00:00:00+08:00</updated><author><name>lostfish</name></author><id>tag:tangke.me,2015-01-24:posts/2015/01/24/jian-zhan-bei-wang.html</id><summary type="html">&lt;p&gt;一直想着搭建一个自己的网站，这次终于付诸行动了。参考了网上的许多资料，所以在这里就简单记录下自己的建站过程。&lt;/p&gt;
+&lt;h3 id="_1"&gt;购买域名&lt;/h3&gt;
+&lt;p&gt;从godaddy购买域名。也可用选择从万网和新网购买域名，这些网站还提供一条龙的服务，如提供主机，帮助备案等。&lt;/p&gt;
+&lt;h3 id="_2"&gt;选择托管网站的主机&lt;/h3&gt;
+&lt;p&gt;购买虚拟主机或者&lt;span class="caps"&gt;VPS&lt;/span&gt;，也可选择存储在github上，我选择的后者（以后有时间再买个主机试试）。如果要将网页放在github上，需要申请一个github账号，并创建一个与帐号同名的项目。具体参考 &lt;a href="https://help.github.com/categories/github-pages-basics/"&gt;GitHub Pages&lt;/a&gt;。 &lt;/p&gt;
+&lt;h3 id="_3"&gt;生成网页&lt;/h3&gt;
+&lt;p&gt;Github推荐使用Jekyll构建自己的github&amp;nbsp;pages。由于偏好python，我选择的pelican（鹈鹕）。Pelican是一个python包，使用pelican生成博客框架的过程如下：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;sudo apt-get install python-pip
+pip install pelican
+pip install markdown
+mkdir myblog
+cd myblog
+pelican-quickstart
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;在myblog/content目录下编写markdown文件：test.md,然后在myblog目录下执行如下命令：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;make html
+make serve
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;在myblog/output目录下会生成页面，同时在浏览器输入&lt;em&gt;localhost:8000&lt;/em&gt;可以查看结果。&lt;/p&gt;
+&lt;p&gt;Markdown语法可参考 &lt;a href="https://help.github.com/articles/markdown-basics/"&gt;Markdown Basics&lt;/a&gt;，Ubuntu-14.04下貌似默认安装了编辑器retext。&lt;/p&gt;
+&lt;p&gt;此外，需要加入如下几个功能：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;选择博客主题。下载pelican主题项目进行配置。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;git clone --recursive https://github.com/getpelican/pelican-themes.git
+cd pelican-themes
+pelican-themes -i ./pelican-themes/elegent
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;增加sitemap。下载pelican插件项目进行配置。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;git clone https://github.com/getpelican/pelican-plugins
+cd pelican-plguins
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;增加评论。&lt;a href="https://disqus.com/"&gt;disqus&lt;/a&gt;提供了评论功能，注册账号即可获取一个shortname，将shortname加入pelicanconf.py,生成的页面中就会加入评论功能。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;增加站长统计。可选择google或者百度的站长工具。如果选择gogole，在 &lt;a href="http://www.google.com/analytics"&gt;Google Analytics&lt;/a&gt; 创建帐号，将追踪&lt;span class="caps"&gt;ID&lt;/span&gt;加入pelicanconf.py，生成页面中就会加入追踪功能。在 &lt;a href="http://www.google.com/webmasters"&gt;Google Webmasters&lt;/a&gt;&amp;nbsp;可查看追踪结果。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;最后，配置文件myblog/pelicanconf.py基本如下：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;AUTHOR = u&amp;#39;lostfish&amp;#39;
+SITENAME = u&amp;quot;lostfish&amp;quot;
+SITEURL = &amp;#39;http://tangke.me&amp;#39;
+THEME = &amp;#39;elegent&amp;#39;
+DISQUS_SITENAME = &amp;#39;disqus提供的shortname&amp;#39;
+GOOGLE_ANALYTICS = &amp;#39;google提供的追踪id&amp;#39;
+
+PATH = &amp;#39;content&amp;#39; #网页内容对应的markdown文件路径
+...
+# 设置生成页面存储路径为pots/年/月/日/{slug}.html (slug即文章标题拼音)
+USE_FOLDER_AS_CATEGORY = False
+ARTICLE_URL = &amp;#39;posts/{date:%Y}/{date:%m}/{date:%d}/{slug}.html&amp;#39;
+ARTICLE_SAVE_AS = &amp;#39;posts/{date:%Y}/{date:%m}/{date:%d}/{slug}.html&amp;#39;
+PAGE_URL = &amp;#39;pages/{slug}.html&amp;#39;
+PAGE_SAVE_AS = &amp;#39;pages/{slug}.html&amp;#39;
+YEAR_ARCHIVE_SAVE_AS = &amp;#39;posts/{date:%Y}/index.html&amp;#39;
+MONTH_ARCHIVE_SAVE_AS = &amp;#39;posts/{date:%Y}/{date:%m}/index.html&amp;#39;
+
+#站点地图插件配置
+PLUGIN_PATHS = [&amp;quot;pelican-plugins&amp;quot;]
+PLUGINS = [&amp;#39;sitemap&amp;#39;, &amp;#39;extract_toc&amp;#39;, &amp;#39;tipue_search&amp;#39;, &amp;#39;liquid_tags.img&amp;#39;,
+            &amp;#39;neighbors&amp;#39;, &amp;#39;latex&amp;#39;, &amp;#39;related_posts&amp;#39;, &amp;#39;share_post&amp;#39;]
+SITEMAP = {
+    &amp;#39;format&amp;#39;: &amp;#39;xml&amp;#39;,
+    &amp;#39;priorities&amp;#39;: {
+        &amp;#39;articles&amp;#39;: 0.7,
+        &amp;#39;indexes&amp;#39;: 0.5,
+        &amp;#39;pages&amp;#39;: 0.3,
+    },
+    &amp;#39;changefreqs&amp;#39;: {
+        &amp;#39;articles&amp;#39;: &amp;#39;monthly&amp;#39;,
+        &amp;#39;indexes&amp;#39;: &amp;#39;daily&amp;#39;,
+        &amp;#39;pages&amp;#39;: &amp;#39;monthly&amp;#39;
+    }
+}
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3 id="_4"&gt;绑定域名&lt;/h3&gt;
+&lt;p&gt;将自己购买的域名与github&amp;nbsp;page绑定在一起需要3步：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;在github pages项目下增加文件&lt;span class="caps"&gt;CNAME&lt;/span&gt;，在该文件中加入购买的域名。&lt;/li&gt;
+&lt;li&gt;在godaddy中将购买域名对应的域名解析服务器绑定到dnspod的服务器，可参考: &lt;a href="https://support.dnspod.cn/Kb/showarticle/?qtype=%E5%8A%9F%E8%83%BD%E4%BB%8B%E7%BB%8D%E5%8F%8A%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B&amp;amp;tsid=42"&gt;Godaddy注册商域名修改&lt;span class="caps"&gt;DNS&lt;/span&gt;地址&lt;/a&gt;。&lt;/li&gt;
+&lt;li&gt;注册dnspod账户，将自己购买的域名与github的服务器绑定,建立两条A类记指向192.30.252.153和192.30.252.154（这个&lt;span class="caps"&gt;IP&lt;/span&gt;可能会变化，参考github上 &lt;a href="https://help.github.com/articles/tips-for-configuring-an-a-record-with-your-dns-provider/"&gt;教程&lt;/a&gt;）。另外，这个配置最晚可能要等72小时之后才生效。  &lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id="_5"&gt;有用参考&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://docs.getpelican.com/en/3.5.0/settings.html"&gt;Pelican官方文档&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.pelicanthemes.com/"&gt;Pelican主题列表&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://oncrashreboot.com/elegant-best-pelican-theme-features"&gt;主题elegent配置说明&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</summary><category term="web"></category><category term="github"></category><category term="pelican"></category></entry></feed>
