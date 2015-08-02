@@ -1,5 +1,20 @@
+install
+============
+sudo apt-get install python-pip
+sudo pip install pelican
+sudo pip install beautifulsoup4
+sudo pip install markdown
+sudo pip install typogrify
+sudo pip install ghp-import
+git clone git://github.com/getpelican/pelican-plugins.git
 
-cmds:
+Use pelican-quickstart to build a blog and then cover it.
+
+Upload to github:
+http://pelican-docs-chs.readthedocs.org/en/latest/tips.html
+
+cmds
+============
 git clone https://github.com/lostfish/lostfish.github.io.git
 cd lostfish.github.io/
 vim .gitignore
@@ -14,4 +29,3 @@ git checkout master
 git merge gh-pages
 git push --all
 make github 
-
